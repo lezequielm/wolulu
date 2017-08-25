@@ -10,16 +10,25 @@ import java.util.Date;
 public class FoodMeeting extends Model {
     @Column(name = "date")
     private Date date;
-    private String place;
+    @Column(name = "host")
+    private User host;
+    @Column(name = "food")
     private String food;
+    @Column(name = "cooker")
     private String cooker;
+    @Column(name = "webId")
+    private String webId;
+    @Column(name = "createdAt")
+    private Date createdAt;
+    @Column(name = "modifiedAt")
+    private Date modifiedAt;
 
     public FoodMeeting() {
     }
 
-    public FoodMeeting(Date date, String place, String food, String cooker) {
+    public FoodMeeting(Date date, User host, String food, String cooker) {
         this.date = date;
-        this.place = place;
+        this.host = host;
         this.food = food;
         this.cooker = cooker;
     }
@@ -32,12 +41,12 @@ public class FoodMeeting extends Model {
         this.date = date;
     }
 
-    public String getPlace() {
-        return place;
+    public User getHost() {
+        return host;
     }
 
-    public void setPlace(String place) {
-        this.place = place;
+    public void setHost(User host) {
+        this.host = host;
     }
 
     public String getFood() {
@@ -54,5 +63,29 @@ public class FoodMeeting extends Model {
 
     public void setCooker(String cooker) {
         this.cooker = cooker;
+    }
+
+    public String getWebId() {
+        return webId;
+    }
+
+    public void setWebId(String webId) {
+        this.webId = webId;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getModifiedAt() {
+        return modifiedAt;
+    }
+
+    public void setModifiedAt(Date modifiedAt) {
+        this.modifiedAt = modifiedAt;
     }
 }
