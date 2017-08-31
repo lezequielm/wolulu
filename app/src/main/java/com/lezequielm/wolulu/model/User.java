@@ -10,8 +10,6 @@ import java.util.Date;
 public class User extends Model{
     @Column(name = "webId")
     private String webId;
-    @Column(name = "username")
-    private String username;
     @Column(name = "name")
     private String name;
     @Column(name = "lastName")
@@ -34,8 +32,7 @@ public class User extends Model{
     public User() {
     }
 
-    public User(String username, String name, String lastName) {
-        this.username = username;
+    public User(String name, String lastName) {
         this.name = name;
         this.lastName = lastName;
     }
@@ -46,14 +43,6 @@ public class User extends Model{
 
     public void setWebId(String webId) {
         this.webId = webId;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getName() {
