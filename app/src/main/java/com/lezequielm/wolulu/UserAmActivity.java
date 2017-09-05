@@ -1,6 +1,8 @@
 package com.lezequielm.wolulu;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +13,7 @@ import com.lezequielm.wolulu.model.User;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.concurrent.RunnableFuture;
 
 public class UserAmActivity extends AppCompatActivity {
 
@@ -51,6 +54,31 @@ public class UserAmActivity extends AppCompatActivity {
     }
 
     private void creaateUser() {
+        AlertDialog dialog = new AlertDialog.Builder(this).setPositiveButton("dfasdfasd", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).setTitle("").setMessage("").create();
+
+        dialog.show();
+
+        Runnable task = new Runnable() {
+            @Override
+            public void run() {
+                /*Lo que hace*/
+            }
+        };
+        task.run();
+
+
+
+
         this.user.setName(this.name.getText().toString());
         this.user.setLastName(this.lastname.getText().toString());
         this.user.setAddress(this.address.getText().toString());
